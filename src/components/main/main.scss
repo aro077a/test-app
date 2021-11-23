@@ -1,0 +1,182 @@
+@import "./../../styles/varables.scss";
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("./../../fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf");
+}
+
+%progresContent {
+  background-color: $secondary_light;
+  border-radius: 17px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 579px 277px;
+  padding: 72px 238px 63px 165px;
+  justify-content: space-between;
+  height: 849px;
+  background-color: $primary_color;
+  box-sizing: border-box;
+  .description {
+    margin: 30px 0;
+    font-size: 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .question {
+    margin: 22px 0;
+    line-height: 21px;
+    width: 458px;
+  }
+  h1 {
+    margin: 0;
+    font-size: 41px;
+    font-family: "Barlow Condensed";
+  }
+  .article {
+    .answers {
+      display: grid;
+      grid-template-rows: repeat(4, 47px);
+      row-gap: 10px;
+      button {
+        background-color: $primary_white;
+        text-align: left;
+        padding: 0 25px;
+        font-size: 14px;
+        width: 586px;
+        height: 47px;
+        box-shadow: 0px 4px 4px $secondary_light_black;
+        background-color: $primary_white;
+        cursor: pointer;
+        &.active {
+          background-color: $secondary_light;
+          color: $secondary_gray;
+        }
+        img {
+          margin-right: 14px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .submiting {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: space-between;
+      margin: 34px 0;
+      button {
+        font-size: 12px;
+        width: 139px;
+        height: 41px;
+      }
+      .nextButton {
+        background-color: $primary_purple;
+        color: $primary_white;
+      }
+    }
+    .skip {
+      text-align: center;
+      border-top: 1px solid $secondary_medium;
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      text-align: end;
+      .dropDownIcon {
+        padding: 15px 20px;
+      }
+    }
+  }
+  .aside {
+    display: grid;
+    grid-template-rows: 93px 251px 230px;
+    row-gap: 20px;
+    h4 {
+      margin: 20px 40px;
+      text-align: left;
+    }
+    .asideTop {
+      @extend %progresContent;
+      display: grid;
+      place-content: center;
+      button {
+        width: 232px;
+        height: 47px;
+        border-radius: 17px;
+        background-color: $primary_purple;
+        color: $primary_white;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+    .asideCenter {
+      @extend %progresContent;
+      text-align: center;
+      figure:nth-of-type(1) {
+        [value]::-webkit-progress-value {
+          background-color: $secondary_green;
+        }
+      }
+      figure:nth-of-type(3) {
+        [value]::-webkit-progress-value {
+          background-color: $secondary_red;
+        }
+      }
+      progress {
+        appearance: none;
+        vertical-align: middle;
+        margin-left: 10px;
+        height: 8px;
+        &[value]::-webkit-progress-bar {
+          background-color: $secondary_medium;
+          border-radius: 8px;
+          height: 8px;
+        }
+        &[value]::-webkit-progress-value {
+          background-color: $secondary_dark;
+          border-radius: 8px;
+          height: 8px;
+        }
+      }
+      figure {
+        margin: 5px 40px;
+        text-align: left;
+      }
+      .percentCount {
+        display: grid;
+        grid-auto-flow: column;
+        margin: 0 60px;
+        padding-top: 10px;
+        font-size: 10px;
+        border-top: 1px solid $secondary_medium;
+      }
+      p {
+        font-weight: bold;
+      }
+    }
+    .asideBottom {
+      @extend %progresContent;
+      figure {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 13px;
+        height: 34px;
+        margin: 1px 0 0;
+        padding: 0 40px;
+        border-radius: 3px;
+        span {
+          align-self: center;
+        }
+        &:nth-of-type(1) {
+          background-color: $secondary_light_green;
+        }
+        &:nth-of-type(2) {
+          background-color: $secondary_light_red;
+        }
+        &:nth-of-type(3) {
+          background-color: $secondary_brown;
+        }
+      }
+    }
+  }
+}
